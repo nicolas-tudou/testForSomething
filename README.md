@@ -221,3 +221,49 @@ graph TB
 	style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
 	style D stroke:#000,stroke-width:8px;
 ```
+```mermaid
+graph LR
+A((太阳系))--> B{行星}
+A === C[earth]
+C -->|卫星| e(moon)
+C -->|人类| F(people)
+C -->|动物| G(animals)
+C -->|植物| H(白杨)
+G .-> B
+F .-> D
+F .-> A
+A ==> D[火星]
+```
+***连接线使用三个符号 表示虚线的点和箭头分别站一个位置***
+#### 显示方向
+* TB/TD（ top bottom/top down）表示从上到下
+* BT（bottom top）表示从下到上
+* RL（right left）表示从右到左
+* LR（left right）表示从左到右
+#### 节点类型
+* 默认节点： A
+* 矩形节点： B[矩形]
+* 圆角矩形节点： C(圆角矩形)
+* 圆形节点： D((圆形))
+* 非对称节点： E>非对称]
+* 菱形节点： F{菱形}
+#### 节点连接类型
+* 箭头连接 A1- ->B1
+* 开放连接 A2- - -B2
+* 虚线箭头连接 A3.->B3 或者 A3-.->B3
+* 虚线连接 A4.-B4 或者 A4-.-B4
+* 粗线箭头连接 A5==>B5
+* 粗线开放连接 A6===B6
+* 标签虚线箭头连接 A7-.text.->B7
+* 标签开放连接 A8- -text- - -B8
+* 小结：
+  * \- 表示线直线
+  * \> 表示箭头
+  * \. 表示虚线
+  * = 表示粗直线
+#### 节点样式
+* fill：节点填充颜色
+* fill-opacity：填充透明度
+* stroke：边框颜色
+* stroke-width：边框宽度
+* 样式写法与 SVG 样式写法一致
