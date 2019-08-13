@@ -133,7 +133,7 @@ name | age | sex | hobbit | work
 1.1 | git 测试 | Mr Qyj | 你、我、他 | 2019-08-16 | 测试git | network and others
 
 ******************************************************************
-### 流程图  
+### flow流程图
 ```flow
 st=>start: Start:>www.baidu.com
 op=>operation: Your Operation
@@ -202,11 +202,22 @@ flowstate is optional and uses the | operator that specifies extra styling for t
 
 urlLink is optional and uses the :> operator to specify the url to link to.
 ```
-************************************************************************
-### nodeType
+***在连接流程图的时候，对于condition类型，有yes和no两个分支，默认情况下，yes在下面显示，right在右面显示。如果同时限制left和right，那么将按照默认的位置显示；如果只限制其中一个，那么另一个也自动限定，则可以按照设定的进行显示。***
+#### nodeType
 * start
 * end
 * operation
 * subroutine
 * condition
 * inputoutput
+********************************************************************
+### mermaid 流程图
+```mermaid
+graph TB
+	A[Apple]-->B{Boy}
+	A---C(Cat)
+	B.->D((Dog))
+	C==喵==>D
+	style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
+	style D stroke:#000,stroke-width:8px;
+```
