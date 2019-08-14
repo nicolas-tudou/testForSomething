@@ -1,3 +1,4 @@
+## 写一份优雅的 readme
 ### 标题
   # this is a H1 #
   ## this is a H2
@@ -214,12 +215,12 @@ urlLink is optional and uses the :> operator to specify the url to link to.
 ### mermaid 流程图
 ```mermaid
 graph TB
-	A[Apple]-->B{Boy}
-	A---C(Cat)
-	B.->D((Dog))
-	C==喵==>D
-	style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
-	style D stroke:#000,stroke-width:8px;
+A[Apple]-->B{Boy}
+A---C(Cat)
+B.->D((Dog))
+C==喵==>D
+style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
+style D stroke:#000,stroke-width:8px;
 ```
 ```mermaid
 graph LR
@@ -267,3 +268,16 @@ A ==> D[火星]
 * stroke：边框颜色
 * stroke-width：边框宽度
 * 样式写法与 SVG 样式写法一致
+---------------------------------------------------------
+## 流畅的使用 git 命令行搞定一切
+### git 分支生命周期
+1. 分支创建
+```git
+git branch  //查看本地分支
+git branch -a //查看远程分支
+git branch test //创建本地分支
+git checkout test //切换到分支
+```
+2. 操作分支
+3. 分支合并
+4. 分支删除
