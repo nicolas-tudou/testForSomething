@@ -276,8 +276,12 @@ A ==> D[火星]
 git branch  //查看本地分支
 git branch -a //查看远程分支
 git branch test //创建本地分支
+git push --set-upstream origin test // 将本地创建的分支同步到远端
 git checkout test //切换到分支
 ```
 2. 操作分支
 3. 分支合并
 4. 分支删除
+* 删除本地分支：git branch -d branchName
+* 删除远端分支：git push origin -d branchName
+* ***删除分支前需要切换到其他分支***
