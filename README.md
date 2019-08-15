@@ -293,3 +293,5 @@ git checkout test //切换到分支
   * 删除本地分支：git branch -d branchName
   * 删除远端分支：git push origin -d branchName
   * ***删除分支前需要切换到其他分支***
+
+  *** this is a new line for examination ***
