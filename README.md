@@ -280,8 +280,13 @@ git push --set-upstream origin test // 将本地创建的分支同步到远端
 git checkout test //切换到分支
 ```
 2. 操作分支
+  * git add ./fileurl 往暂存区添加文修改
+  * git commit -m 'memo' 将暂存区中的修改提交到本地代码库中
+  * git push / git push -f 将本地的修改同步到远端
+  * git log 查看提交记录
+  * git reset --soft 
 3. 分支合并
 4. 分支删除
-* 删除本地分支：git branch -d branchName
-* 删除远端分支：git push origin -d branchName
-* ***删除分支前需要切换到其他分支***
+  * 删除本地分支：git branch -d branchName
+  * 删除远端分支：git push origin -d branchName
+  * ***删除分支前需要切换到其他分支***
