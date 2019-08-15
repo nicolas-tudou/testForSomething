@@ -294,6 +294,6 @@ git checkout test //切换到分支
   * 删除远端分支：git push origin -d branchName
   * ***删除分支前需要切换到其他分支***
 
-  *** this is a new line for examination ***
+  ***this is a new line for examination***
 
-  *** this is a new line for cherrypick ***
+  ***this is a new line for cherrypick***
