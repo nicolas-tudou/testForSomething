@@ -284,7 +284,10 @@ git checkout test //切换到分支
   * git commit -m 'memo' 将暂存区中的修改提交到本地代码库中
   * git push / git push -f 将本地的修改同步到远端
   * git log 查看提交记录
-  * git reset --soft 
+  * git reset --soft/mixed/hard
+    - soft
+    - mixed 将暂存区的内容与远端同步
+    - hard 将本地仓库和暂存区强制还原为远端仓库
 3. 分支合并
 4. 分支删除
   * 删除本地分支：git branch -d branchName
