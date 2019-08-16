@@ -214,13 +214,67 @@ urlLink is optional and uses the :> operator to specify the url to link to.
 ********************************************************************
 ### mermaid 流程图
 ```mermaid
-graph TB
-A[Apple]-->B{Boy}
-A---C(Cat)
-B.->D((Dog))
-C==喵==>D
-style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
-style D stroke:#000,stroke-width:8px;
+graph LR
+origin((远程仓库 github gitlab))
+origin --> my-local(本地仓库)
+my-local --> branchA(分支A)
+branchA --> fileA((文件A))
+branchA --> fileB((文件B))
+my-local --> branchB(分支B)
+branchB --> fileC((文件F))
+branchB ==> fileD((文件B))
+origin --> your-local(本地仓库)
+your-local --> branchC(分支C)
+branchC --> fileE((文件A))
+branchC --> fileF((文件B))
+your-local --> branchD(分支D)
+branchD --> fileG((文件A))
+branchD --> fileH((文件C))
+location((本地文件))
+location -.-> four(四维)
+fileA -.-> location
+fileB -.-> location
+fileC -.-> location
+fileD -.-> location
+fileE -.-> location
+fileF -.-> location
+fileG -.-> location
+fileH -.-> location
+location -.-> three(三维)
+three --> ip[主机地址]
+three --> fileurl[文件路径]
+three --> filename[文件名称]
+five(五维)
+branchA -.-> five
+branchB -.-> five
+branchC -.-> five
+branchD -.-> five
+six(六维)
+my-local -.-> six
+your-local -.-> six
+style origin fill: #0b61a4, fill-opacity: 0.7, stroke: #fa0, stroke-width: 2px;
+style my-local fill: #00a779, stroke: #fa0, stroke-width: 2px;
+style your-local fill: #00a779, stroke: #fa0, stroke-width: 2px;
+style branchA fill: #48dd00, stroke: #fa0, stroke-width: 2px;
+style branchB fill: #48dd00, stroke: #fa0, stroke-width: 2px;
+style branchC fill: #48dd00, stroke: #fa0, stroke-width: 2px;
+style branchD fill: #48dd00, stroke: #fa0, stroke-width: 2px;
+style fileA fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileB fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileC fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileD fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileE fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileF fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileG fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style fileH fill: #d5f800, stroke: #fa0, stroke-width: 2px;
+style location fill: #ffe200, stroke: #fa0, stroke-width: 2px;
+style ip fill: #ff8500, stroke: #fa0, stroke-width: 2px;
+style fileurl fill: #ff6f00, stroke: #fa0, stroke-width: 2px;
+style filename fill: #ff4f00, stroke: #fa0, stroke-width: 2px;
+style six fill: #009999, stroke: #fa0, stroke-width: 3px;
+style five fill: #009999, stroke: #fa0, stroke-width: 3px;
+style four fill: #009999, stroke: #fa0, stroke-width: 3px;
+style three fill: #009999, stroke: #fa0, stroke-width: 3px
 ```
 ```mermaid
 graph LR
