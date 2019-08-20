@@ -1,0 +1,29 @@
+.fixed-test {
+  height: 600px;
+  background: #ffe800;
+  .transform {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: translate3d(0,60px,0);
+  }
+  .fixed {
+    z-index: 999;
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #086fa1;
+    &-text {
+      z-index: 1000;
+      background: #fff;
+      color: #333;
+    }
+  }
+}

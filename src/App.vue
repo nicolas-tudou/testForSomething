@@ -1,16 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'home' }">Home</router-link> |
-      <router-link :to="{ name: 'test' }">Test</router-link>
-    </div>
-    <router-view/>
+    <route-module :routeList="routeList" />
   </div>
 </template>
 
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      routeList: [
+        {
+          routeName: 'home',
+          routeText: '首页'
+        },
+        {
+          routeName: 'test',
+          routeText: '测试页面'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="less" scoped>
 #app {
-  width: 100%;
-  background: #f40;
+  margin: 0 auto;
+  width: 80%;
+  min-width: 880px;
+  min-height: 100vh;
 }
 </style>

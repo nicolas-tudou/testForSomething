@@ -1,13 +1,29 @@
 <template>
-  <div class="about">
-    <router-link :to="{ name: 'fixedTest' }">fixedTest</router-link>
-    <router-view/>
+  <div class="test">
+    <route-module :routeList="testRoutes" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 export default {
-  name: 'test'
+  name: 'test',
+  data () {
+    return {
+      testRoutes: [
+        {
+          routeName: 'fixedTest',
+          routeText: 'fixed 测试'
+        }
+      ]
+    }
+  }
 }
 </script>
+
+<style lang="less" scoped>
+.test {
+  display: flex;
+  flex-direction: column;
+}
+</style>
