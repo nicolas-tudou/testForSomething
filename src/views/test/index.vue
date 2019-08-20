@@ -1,7 +1,5 @@
 <template>
-  <div class="test">
-    <route-module :routeList="testRoutes" />
-  </div>
+  <route-module :routeList="testRoutes" />
 </template>
 
 <script>
@@ -20,10 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-.test {
-  display: flex;
-  flex-direction: column;
-}
-</style>
