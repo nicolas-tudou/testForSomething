@@ -1,0 +1,85 @@
+@devideColor: #d5d5d5;
+/* 分割线 */
+.devideBottom() {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: @devideColor;
+    transform: scaleY(.25);
+  }
+}
+.devideTop() {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: @devideColor;
+    transform: scaleY(.5);
+  }
+}
+.devideLeft() {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: @devideColor;
+    transform: scaleX(.5);
+  }
+}
+.devideRight() {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: @devideColor;
+    transform: scaleX(.5);
+  }
+}
+
+/* 单行文字超出打点展示 */
+.textOverflowEllipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mutilLineEllipsis(@cols: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @cols;
+}
+
+/* 点击按压效果 使用背景色 不能用透明度 */
+// 纯色按钮按压
+.whiteBtnActive(@bgColor: rgba(0,0,0,.1)) {
+  &:active {
+    background: @bgColor !important;
+  }
+}
+
+// 白底主题色边框按钮按压
+.whiteBorderBtnActive(@bgColor: @themeColor, @borderColor: @themeColor, @fontColor: @whiteColor) {
+  &:active {
+    border-color: @borderColor;
+    background: @bgColor !important;
+    color: @fontColor;
+  }
+}

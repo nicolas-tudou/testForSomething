@@ -12,6 +12,18 @@ export default {
         {
           routeName: 'fixedTest',
           routeText: 'fixed 测试'
+        },
+        {
+          routeName: 'focusTest',
+          routeText: 'focus 测试'
+        },
+        {
+          routeName: 'stackContext',
+          routeText: 'stackContext 测试'
+        },
+        {
+          routeName: 'zindexTest',
+          routeText: 'zindexTest 测试'
         }
       ]
     }
