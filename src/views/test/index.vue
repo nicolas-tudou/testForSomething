@@ -24,6 +24,10 @@ export default {
         {
           routeName: 'zindexTest',
           routeText: 'zindexTest 测试'
+        },
+        {
+          routeName: 'cssTest',
+          routeText: 'cssTest 测试'
         }
       ]
     }

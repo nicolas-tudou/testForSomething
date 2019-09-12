@@ -18,5 +18,10 @@ export default [
     path: '/test/zindexTest',
     name: 'zindexTest',
     component: () => import('@/views/zindexTest')
+  },
+  {
+    path: '/test/cssTest',
+    name: 'cssTest',
+    component: () => import('@/views/cssTest')
   }
 ]
