@@ -23,5 +23,10 @@ export default [
     path: '/test/cssTest',
     name: 'cssTest',
     component: () => import('@/views/cssTest')
+  },
+  {
+    path: '/test/sortTest',
+    name: 'sortTest',
+    component: () => import('@/views/test/sortTest')
   }
 ]

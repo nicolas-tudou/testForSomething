@@ -28,6 +28,10 @@ export default {
         {
           routeName: 'cssTest',
           routeText: 'cssTest 测试'
+        },
+        {
+          routeName: 'sortTest',
+          routeText: 'sort 测试'
         }
       ]
     }
