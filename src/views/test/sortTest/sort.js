@@ -1,7 +1,4 @@
-import { merge } from "_rxjs@6.5.3@rxjs"
-
 export const insertionSOrt = function (arr) {
-  console.log('insertionSOrt', arr)
   if (arr.length < 2) return arr
   let j = 1
   while (j < arr.length) {
@@ -16,14 +13,39 @@ export const insertionSOrt = function (arr) {
   }
   return arr
 }
-export const mergeSort = function (arr, start = 0, end) {
-  console.log('mergeSort', arr)
-  end = end || arr.length - 1
-  if (start == end) return arr
-  return merge(mergeSort(start, Math.ceil(start + end) / 2), mergeSort(Math.ceil((start + end) / 2, end)))
-  function merge (pre, suff) {
-    let res = [...pre, ...suff]
-    console.log(pre, suff)
-    return res
+export const mergeSort = function (arr) {
+  if (arr.length < 2) return arr
+  return sort(arr, 0, arr.length - 1)
+}
+function sort (arr, L, R) {
+  if(L == R) {
+    return
   }
+  let mid = L + ((R - L) >> 1)
+  sort(arr, L, mid)
+  sort(arr, mid + 1, R)
+  merge(arr, L, mid, R)
+  return arr
+}
+function merge (arr, start, mid, end) {
+  let temp = []
+  let i = start
+  let j = mid + 1
+  while(i <= mid && j <= end) {
+    if (arr[i] < arr[j]) {
+      temp.push(arr[i++])
+    } else {
+      temp.push(arr[j++])
+    }
+  }
+  while (i <= mid) {
+    temp.push(arr[i++])
+  }
+  while (j <= end) {
+    temp.push(arr[j++])
+  }
+  for (i = 0; i < temp.length; i++) {
+    arr[start + i] = temp[i]
+  }
+  return arr
 }
