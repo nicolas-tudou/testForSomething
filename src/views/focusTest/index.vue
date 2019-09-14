@@ -40,7 +40,7 @@ const columns = [
   { title: 'Creator', dataIndex: 'creator', key: 'creator' },
   { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
   { title: 'Action', key: 'operation', scopedSlots: { customRender: 'operation' } }
-];
+]
 
 const data = []
 for (let i = 0; i < 3; ++i) {
