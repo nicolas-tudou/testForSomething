@@ -8,6 +8,9 @@ class Stack {
     }
     return null
   }
+  top () {
+    return this.data[this.data.length - 1]
+  }
   add (data) {
     this.data.push(data)
   }
@@ -19,9 +22,4 @@ class Stack {
   }
 }
 
-let stack = new Stack()
-while (stack.size() < 10) {
-  stack.add('name-' + stack.size())
-}
-console.log(stack.pop())
-console.log(stack)
+module.exports = Stack
