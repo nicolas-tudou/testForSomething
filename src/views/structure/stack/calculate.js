@@ -33,6 +33,6 @@ function calReversePolish (symbols) {
   return numberStack.pop()
 }
 // (3+4)*5-6   ---->  3 4 + 5 * 6 -
-let example = '(3+4)*5-6*(3+7)'
+let example = '( 3 + 4 ) * 5 - 6 * ( 3 + 7 )'
 console.log(polish(example))
 console.log(calReversePolish(polish(example)))

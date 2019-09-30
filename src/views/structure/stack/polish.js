@@ -15,6 +15,9 @@ module.exports = function convertToReserve (expression = '') {
     let next = getNext(expression, index)
     index = next.index
     let curVal = next.value
+    if (/\s/.test(curVal)) {
+      continue
+    }
     if (/\d+/.test(curVal)) {
       // 如果是数字 直接压入 s2 中
       s2.add(curVal)
@@ -62,4 +65,3 @@ function getNext (str, index) {
     index
   }
 }
-
