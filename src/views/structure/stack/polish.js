@@ -6,7 +6,7 @@ const priority = {
   '/': 2
 }
 
-function convertToReserve (expression = '') {
+module.exports = function convertToReserve (expression = '') {
   let s1 = new Stack()
   let s2 = new Stack()
   let result = []
@@ -15,7 +15,6 @@ function convertToReserve (expression = '') {
     let next = getNext(expression, index)
     index = next.index
     let curVal = next.value
-    debugger
     if (/\d+/.test(curVal)) {
       // 如果是数字 直接压入 s2 中
       s2.add(curVal)
@@ -64,5 +63,3 @@ function getNext (str, index) {
   }
 }
 
-// (3 + 4) * 5 - 6   ---->  3 4 + 5 * 6 -
-console.log(convertToReserve('(3+4)*5-6'))
