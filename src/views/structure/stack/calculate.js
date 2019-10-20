@@ -1,38 +1,51 @@
 let polish = require('./polish')
 let Stack = require('./Stack')
 
-function cal (n1, n2, symbol) {
-  n1 = Number(n1)
-  n2 = Number(n2)
-  switch (symbol) {
-    case '+':
-      return n1 + n2
-    case '-':
-      return n2 - n1
-    case '*':
-      return n1 * n2
-    case '/':
-      return n2 / n1
-    default:
-      return 0
-  }
-}
-
 function calReversePolish (symbols) {
   let numberStack = new Stack()
   for (let i = 0; i < symbols.length; i ++) {
     let temp = symbols[i]
-    if (/\d+/.test(temp)) {
+    if (typeof temp === 'number') {
       numberStack.add(temp)
     } else {
-      let n1 = numberStack.pop()
-      let n2 = numberStack.pop()
-      numberStack.add(cal(n1, n2, temp))
+      let args = []
+      while (args.length < temp.argLength) {
+        args.push(numberStack.pop())
+      }
+      numberStack.add(temp.cal(...args))
     }
   }
   return numberStack.pop()
 }
 // (3+4)*5-6   ---->  3 4 + 5 * 6 -
-let example = '( 3 + 4 ) * 5 - 6 * ( 3 + 7 )'
-console.log(polish(example))
+/**
+ * ( 3 + 4 ) * 5 - 6 * ( 3 + 7 )
+ * s1 = []  s2 = []
+ * [(]  [3] => [(, +] [3] => [(, +] [3, 4] => [()] [3, 4, +] => [] [3, 4, +]
+ * => [*] [3, 4, +] => [*] [3, 4, +, 5] => (-) [-] [3, 4, +, 5, *]
+ * => [-] [3, 4, +, 5, *, 6] => [-, *] [3, 4, +, 5, *, 6] => [-, *, (] [3, 4, +, 5, *, 6]
+ * => [-, *, (] [3, 4, +, 5, *, 6, 3] => [-, *, (, +] [3, 4, +, 5, *, 6, 3]
+ * => [-, *, (, +] [3, 4, +, 5, *, 6, 3, 7] => [-, *] [3, 4, +, 5, *, 6, 3, 7, +]
+ * => [3, 4, +, 5, *, 6, 3, 7, +, *, -]
+ * 
+ * 数字  运算符  类似小括号的分隔符
+ * 1、如果遇到数字，直接压入数据栈中
+ * 2、如果是运算符，如果当前运算符的优先级比符号栈的栈顶元素高，则压入符号栈
+ * 3、如果是运算符，并且当前运算符的优先级比栈顶的符号优先级低，则将符号栈栈顶符号弹出并压入到数据栈，回到第二部比较
+ * 4、如果遇到的是分隔符的左半边，则压入符号栈
+ * 5、如果遇到的是分隔符的右半边，则依次从符号栈中弹出符号并压入到数据栈中，直到遇到与之对应的左半边符号，此时将左半边符号弹出符号栈，执行去分隔符的效果
+ * 6、如果遇到的是类似 sqrt(的运算分隔符，则先将分别将sqrt和(压入符号栈
+ * 
+ * exp:
+ * 3+sqrt(3*(1+2))
+ * 1、将数字3压入到数据栈中 将符号+压入到符号栈中 [+] [3]
+ * 2、sqrt( => 将sqrt和(压入符号栈中 [+, sqrt, (] [3]
+ * 3、将数字3压入数据栈中 将符号*压入符号栈中 [+, sqrt, (, *] [3, 3]
+ * 4、将左括号压入符号栈中，将数字1压入到数据栈中 将符号+压入到符号栈中 将数字2压入到数据栈中 [+, sqrt, (, *, (, +] [3, 3, 1, 2]
+ * 5、) => 将+弹出压入到数据栈中[+, sqrt, (, *] [3, 3, 1, 2, +]
+ * 6、) => 将*弹出压入到数据栈中[] [3, 3, 1, 2, +, *]
+ * 7、将sqrt和+依次弹出压入到数据栈中[] [3, 3, 1, 2, +, *, sqrt, +]
+ */
+let example = '32.3+sqrt(300*(10+2))'
+// console.log(polish(example))
 console.log(calReversePolish(polish(example)))

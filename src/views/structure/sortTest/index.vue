@@ -1,14 +1,15 @@
 <template>
   <div class="sort" style="padding: 15px; background: #fff200;">
     请输入排序规模：<a-input v-model="sortLength" style="width: 100px;" @change="lengthChange" />
-    <p class="text-overflow">源数据：[ <span v-for="(num, index) in sortData" :key="index">{{num}}<span v-if="index < sortData.length - 1">，</span></span> ]</p>
+    <button class="calculate" style="margin-left: 30px;" @click="calculate">开始排序</button>
+    <!--<p class="text-overflow">源数据：[ <span v-for="(num, index) in sortData" :key="index">{{num}}<span v-if="index < sortData.length - 1">，</span></span> ]</p>-->
     <div class="sort-content">
       <p style="font-size: 20px; font-weight: bold;">排序结果：</p>
       <template v-for="sort in sortFunction">
         {{sort.title}}
         <div class="sort-time" :key="sort.title" style="padding: 10px 15px; border-bottom: 1px dashed #000;">
           耗时：<span>{{sort.time}}</span>
-          <p class="text-overflow">结果：[ <span v-for="(num, index) in sort.result" :key="index">{{num}}<span v-if="index < sort.result.length - 1">，</span></span> ]</p>
+          <!--<p class="text-overflow">结果：[ <span v-for="(num, index) in sort.result" :key="index">{{num}}<span v-if="index < sort.result.length - 1">，</span></span> ]</p>-->
         </div>
       </template>
     </div>
@@ -59,7 +60,6 @@ export default {
     },
     lengthChange () {
       this.getSortData()
-      this.calculate()
     }
   }
 }

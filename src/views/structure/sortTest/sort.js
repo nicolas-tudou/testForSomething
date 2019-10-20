@@ -49,3 +49,15 @@ function merge (arr, start, mid, end) {
   }
   return arr
 }
+
+// let arr = []
+// while (arr.length < 100000) {
+//   arr.push(Math.random() * 100000)
+// }
+// let mD = new Date().getTime()
+// mergeSort(arr)
+// console.log(new Date().getTime() - mD)
+//
+// let iD = new Date().getTime()
+// insertionSOrt(arr)
+// console.log(new Date().getTime() - iD)
