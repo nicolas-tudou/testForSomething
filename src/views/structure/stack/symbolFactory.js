@@ -12,7 +12,7 @@ class SymbolFactory {
   }
   creatSymbol (type) {
     if (/\d+(\.\d+)?/.test(type)) return Number(type)
-    if (!this.convertType[type]) return type
+    if (!this.convertType[type]) throw new Error("没有这种运算符：" + type)
     return new (this.convertType[type])(type)
   }
 }
