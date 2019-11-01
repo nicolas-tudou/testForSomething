@@ -52,12 +52,13 @@ import {
   Timeline,
   Tooltip,
   // Mention,
-  // Upload,
+  Upload,
   // version,
   TreeSelect
 } from 'ant-design-vue'
 
 Vue.use(Layout)
+Vue.component(Upload.name, Upload)
 Vue.component(Affix.name, Affix) // a-affix
 Vue.component(Layout.name, Layout)
 Vue.component(TreeSelect.name, TreeSelect)
