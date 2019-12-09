@@ -40,6 +40,6 @@ function adjustHeap (arr, i, length) {
   }
 }
 
-let arr = [1000,32]
+let arr = [1000,32,4,5,8,7,9,12,0,3,-6]
 heapSort(arr)
 console.log(arr)

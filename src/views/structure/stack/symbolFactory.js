@@ -15,6 +15,11 @@ class SymbolFactory {
     if (!this.convertType[type]) throw new Error("没有这种运算符：" + type)
     return new (this.convertType[type])(type)
   }
+  extend (type, createFn) {
+    if (!this.convertType[type]) {
+      this.convertType[type] = createFn
+    }
+  }
 }
 
 class DelimiterSymbol {

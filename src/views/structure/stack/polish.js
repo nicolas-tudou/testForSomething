@@ -1,11 +1,5 @@
 let Stack = require('./Stack')
 let SymbolFactory = require('./SymbolFactory')
-const priority = {
-  '+': 1,
-  '-': 1,
-  '*': 2,
-  '/': 2
-}
 
 function convertToReserve (expression = '') {
   let s1 = new Stack()
@@ -65,5 +59,6 @@ function getSymbolList (expression) {
 
 // let example = '32.3+sqrt(300*(1+2))'
 // console.log(convertToReserve(example))
+console.log(convertToReserve('1 + ((3 + 7) * 2 / sqrt(4 * (1 + 9 / 3)) * 3 + 100) * 10'))
 
-module.exports = convertToReserve
+// module.exports = convertToReserve
